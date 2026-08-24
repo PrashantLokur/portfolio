@@ -217,7 +217,6 @@ export default function Portfolio() {
             <div className="mt-14 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-500">
               <span>11+ years in automotive engineering</span>
               <span>Gothenburg, Sweden</span>
-              <span>Open to global opportunities</span>
             </div>
           </div>
 
@@ -502,9 +501,10 @@ export default function Portfolio() {
               Let’s build more intelligent, efficient vehicles.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl leading-7 text-slate-400">
-              I’m interested in advanced vehicle controls, electrification,
-              research collaboration, and Staff or Principal-level engineering
-              opportunities.
+              I write and think about advanced vehicle controls, electrification,
+              and predictive energy management. Always glad to discuss the
+              technical problems in this space, or to hear from others working
+              on them.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
@@ -514,7 +514,7 @@ export default function Portfolio() {
                 <Mail size={17} /> Email me
               </a>
               <a
-                href="https://www.linkedin.com/"
+                href="REPLACE_WITH_YOUR_LINKEDIN_URL"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3.5 font-semibold"
