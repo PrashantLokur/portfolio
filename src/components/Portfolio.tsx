@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import {
   ArrowDown,
@@ -44,6 +44,56 @@ const experience = [
     organization: "Volvo Car Group · Tata Consultancy Services",
     description:
       "Master's thesis on driver modelling for evasive manoeuvre steering assist, using an LQR preview controller and neuromuscular dynamics. Earlier work on battery control module verification and CAD automation.",
+  },
+];
+
+const publications = [
+  {
+    year: "2026",
+    title:
+      "Energy-Optimal Thermal Management of Heat-Pump Battery Electric Vehicles",
+    authors: "P. Lokur, N. Murgovski",
+    venue: "IEEE Open Journal of Vehicular Technology (in press)",
+    type: "Journal article",
+  },
+  {
+    year: "2025",
+    title:
+      "Control-oriented Model for Thermal Energy Management of Battery Electric Vehicles",
+    authors: "P. Lokur, N. Murgovski, M. Larsson",
+    venue: "IEEE Transactions on Vehicular Technology, 74(4), 5467–5478",
+    type: "Journal article",
+  },
+  {
+    year: "2024",
+    title: "Optimizing Thermal Energy Management in BEVs via Distributed Optimization",
+    authors: "P. Lokur",
+    venue: "Chalmers University of Technology",
+    type: "Licentiate thesis",
+  },
+  {
+    year: "2024",
+    title:
+      "Maximizing the Energy-Saving Potential of Declutchable BEV Powertrains via Eco-Driving",
+    authors: "Y. Xu, P. Lokur, S. Klacar et al.",
+    venue: "IEEE ESARS-ITEC 2024",
+    type: "Conference paper",
+  },
+  {
+    year: "2023",
+    title:
+      "Distributed Model Predictive Controller for Thermal Energy Management System of Battery Electric Vehicles",
+    authors: "P. Lokur, N. Murgovski, K. Nicklasson",
+    venue: "IEEE Conference on Decision and Control (CDC), 8363–8368",
+    type: "Conference paper",
+  },
+  {
+    year: "2022",
+    title:
+      "Modeling of the Thermal Energy Management System for Battery Electric Vehicles",
+    authors: "P. Lokur, K. Nicklasson, L. Verde et al.",
+    venue: "IEEE Vehicle Power and Propulsion Conference (VPPC) 2022",
+    type: "Conference paper",
   },
 ];
 
@@ -94,32 +144,7 @@ function LinkedInIcon() {
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [ambient, setAmbient] = useState(10);
-  const [power, setPower] = useState(180);
-  const [cooling, setCooling] = useState(55);
-
-  const demo = useMemo(() => {
-    const estimatedTemperature = Math.max(
-      -10,
-      Math.min(65, ambient + power * 0.115 - cooling * 0.22)
-    );
-    const coolingDemand = Math.max(
-      0,
-      Math.min(100, (estimatedTemperature - 22) * 3.5)
-    );
-    const efficiency = Math.max(
-      82,
-      Math.min(99, 98 - Math.abs(estimatedTemperature - 28) * 0.28)
-    );
-
-    return {
-      temperature: estimatedTemperature,
-      demand: coolingDemand,
-      efficiency,
-    };
-  }, [ambient, power, cooling]);
-
-  const navItems = ["About", "Experience", "Research", "Playground", "Contact"];
+  const navItems = ["About", "Experience", "Research", "Contact"];
 
   return (
     <main className="overflow-hidden bg-[#05070b] text-slate-50">
@@ -366,8 +391,23 @@ export default function Portfolio() {
                 energy flows using prediction, optimization, and system-level
                 intelligence.
               </p>
-              <div className="mt-10 inline-flex items-center gap-2 text-sm font-semibold">
-                Publications coming soon <ArrowUpRight size={16} />
+              <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold">
+                <a
+                  href="https://scholar.google.com/citations?hl=en&user=m1iw9SQAAAAJ"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-cyan-300 transition hover:text-cyan-200"
+                >
+                  Google Scholar <ArrowUpRight size={16} />
+                </a>
+                <a
+                  href="https://research.chalmers.se/en/person/lokur"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-slate-300 transition hover:text-white"
+                >
+                  Chalmers Research <ArrowUpRight size={16} />
+                </a>
               </div>
             </article>
 
@@ -386,115 +426,29 @@ export default function Portfolio() {
               </div>
             </article>
           </div>
-        </div>
-      </section>
 
-      <section id="playground" className="border-t border-white/5 bg-white/[0.018] py-28">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionLabel>Engineering playground</SectionLabel>
-          <div className="mt-8 grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-            <div>
-              <h2 className="text-balance text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">
-                Explore a simplified battery thermal-control model.
-              </h2>
-              <p className="mt-6 leading-7 text-slate-400">
-                This illustrative demo shows how ambient conditions, charging
-                power, and commanded cooling can affect an estimated battery
-                temperature and efficiency window. It is educational—not a
-                production vehicle model.
-              </p>
-
-              <div className="mt-10 space-y-7">
-                <label className="block">
-                  <div className="mb-3 flex justify-between text-sm">
-                    <span className="text-slate-300">Ambient temperature</span>
-                    <span className="font-mono text-cyan-300">{ambient}°C</span>
+          <div className="mt-16">
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Selected publications
+            </h3>
+            <div className="mt-8 divide-y divide-white/[0.06] border-t border-white/[0.06]">
+              {publications.map((pub) => (
+                <article
+                  key={pub.title}
+                  className="grid gap-2 py-7 sm:grid-cols-[6rem_1fr]"
+                >
+                  <div className="text-sm text-cyan-300">{pub.year}</div>
+                  <div>
+                    <h4 className="text-lg font-medium leading-7 text-slate-100">
+                      {pub.title}
+                    </h4>
+                    <p className="mt-2 text-sm text-slate-400">{pub.authors}</p>
+                    <p className="mt-1 text-sm text-slate-500">
+                      {pub.venue} · {pub.type}
+                    </p>
                   </div>
-                  <input
-                    type="range"
-                    min={-20}
-                    max={45}
-                    value={ambient}
-                    onChange={(event) => setAmbient(Number(event.target.value))}
-                    className="w-full accent-cyan-300"
-                  />
-                </label>
-
-                <label className="block">
-                  <div className="mb-3 flex justify-between text-sm">
-                    <span className="text-slate-300">Charging power</span>
-                    <span className="font-mono text-cyan-300">{power} kW</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={20}
-                    max={350}
-                    value={power}
-                    onChange={(event) => setPower(Number(event.target.value))}
-                    className="w-full accent-cyan-300"
-                  />
-                </label>
-
-                <label className="block">
-                  <div className="mb-3 flex justify-between text-sm">
-                    <span className="text-slate-300">Cooling command</span>
-                    <span className="font-mono text-cyan-300">{cooling}%</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={0}
-                    max={100}
-                    value={cooling}
-                    onChange={(event) => setCooling(Number(event.target.value))}
-                    className="w-full accent-cyan-300"
-                  />
-                </label>
-              </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-white/[0.08] bg-[#080b11] p-6 sm:p-9">
-              <div className="grid gap-4 sm:grid-cols-3">
-                {[
-                  ["Estimated temperature", `${demo.temperature.toFixed(1)}°C`],
-                  ["Cooling demand", `${demo.demand.toFixed(0)}%`],
-                  ["Estimated efficiency", `${demo.efficiency.toFixed(1)}%`],
-                ].map(([label, value]) => (
-                  <div key={label} className="rounded-2xl bg-white/[0.04] p-5">
-                    <p className="text-xs leading-5 text-slate-500">{label}</p>
-                    <p className="mt-3 text-2xl font-semibold">{value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 rounded-3xl border border-white/[0.06] bg-slate-950 p-6">
-                <div className="flex h-64 items-end gap-3">
-                  {[14, 21, 31, 43, 57, 72, 63, 49, 38, 30, 26, 22].map(
-                    (height, index) => (
-                      <motion.div
-                        key={index}
-                        className="flex-1 rounded-t bg-gradient-to-t from-blue-500/35 to-cyan-300"
-                        animate={{
-                          height: `${Math.max(
-                            12,
-                            Math.min(92, height + demo.temperature * 0.45)
-                          )}%`,
-                        }}
-                        transition={{ duration: 0.45 }}
-                      />
-                    )
-                  )}
-                </div>
-                <div className="mt-5 flex justify-between text-xs text-slate-600">
-                  <span>Start</span>
-                  <span>Thermal response over time</span>
-                  <span>Horizon</span>
-                </div>
-              </div>
-
-              <p className="mt-5 text-xs leading-5 text-slate-600">
-                Simplified illustrative equations. No proprietary data or control
-                logic is represented.
-              </p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
