@@ -18,25 +18,32 @@ import {
 
 const experience = [
   {
-    period: "Current",
-    title: "Industrial PhD Researcher",
-    organization: "Chalmers University of Technology × ZEEKR",
+    period: "2021 — Present",
+    title: "Doctoral Researcher",
+    organization: "Chalmers University of Technology · Geely Technology Europe",
     description:
-      "Researching intelligent thermal and energy management for battery-electric vehicles, connecting advanced control theory with production-focused engineering.",
+      "Industrial PhD on predictive thermal and energy management for battery-electric vehicles, developing optimization-based control that holds up under production constraints.",
   },
   {
-    period: "Previously",
-    title: "Controls Engineer",
+    period: "2017 — 2021",
+    title: "Function Developer",
     organization: "Volvo Cars",
     description:
-      "Developed and integrated automotive control functions across modeling, software implementation, calibration, verification, and vehicle-level validation.",
+      "Led function development of route-based energy optimization for plug-in hybrid vehicles, alongside advanced engineering projects, requirements work, and test development. Also served as Scrum Master and acting Product Owner for the team.",
   },
   {
-    period: "11+ years",
-    title: "Automotive Engineering",
-    organization: "Controls · Electrification · Embedded Systems",
+    period: "2015 — 2017",
+    title: "Analysis Engineer",
+    organization: "Volvo Cars",
     description:
-      "A career spanning control algorithm development, system modeling, embedded implementation, and multidisciplinary vehicle integration.",
+      "Owned system testing for the vehicle dynamics node — verification methods, test plans, design verification, and requirement reviews with internal and external stakeholders.",
+  },
+  {
+    period: "2012 — 2015",
+    title: "Early career",
+    organization: "Volvo Car Group · Tata Consultancy Services",
+    description:
+      "Master's thesis on driver modelling for evasive manoeuvre steering assist, using an LQR preview controller and neuromuscular dynamics. Earlier work on battery control module verification and CAD automation.",
   },
 ];
 
@@ -514,7 +521,7 @@ export default function Portfolio() {
                 <Mail size={17} /> Email me
               </a>
               <a
-                href="REPLACE_WITH_YOUR_LINKEDIN_URL"
+                href="https://www.linkedin.com/in/prashantlokur/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3.5 font-semibold"
