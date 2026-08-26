@@ -25,12 +25,28 @@ export default function WritingIndex() {
         </h1>
         <p className="mt-6 leading-7 text-slate-400">
           Notes on vehicle controls, electrification, and predictive energy
-          management — mostly attempts to explain my research without the
-          notation.
+          management.
         </p>
 
         {posts.length === 0 ? (
-          <p className="mt-16 text-slate-500">Nothing published yet.</p>
+          <div className="mt-20 rounded-3xl border border-white/[0.08] bg-white/[0.02] px-8 py-16 text-center">
+            <p className="text-2xl font-semibold tracking-tight text-slate-200">
+              Coming soon
+            </p>
+            <p className="mx-auto mt-4 max-w-md leading-7 text-slate-500">
+              First pieces are being written. In the meantime, my published work
+              is on{" "}
+              <a
+                href="https://scholar.google.com/citations?hl=en&user=m1iw9SQAAAAJ"
+                target="_blank"
+                rel="noreferrer"
+                className="text-cyan-300 underline underline-offset-4"
+              >
+                Google Scholar
+              </a>
+              .
+            </p>
+          </div>
         ) : (
           <div className="mt-16 divide-y divide-white/[0.06] border-t border-white/[0.06]">
             {posts.map((post) => (
