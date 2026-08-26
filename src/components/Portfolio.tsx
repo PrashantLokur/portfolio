@@ -144,7 +144,13 @@ function LinkedInIcon() {
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navItems = ["About", "Experience", "Research", "Contact"];
+  const navItems = [
+    { label: "About", href: "/#about" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Research", href: "/#research" },
+    { label: "Writing", href: "/writing" },
+    { label: "Contact", href: "/#contact" },
+  ];
 
   return (
     <main className="overflow-hidden bg-[#05070b] text-slate-50">
@@ -157,11 +163,11 @@ export default function Portfolio() {
           <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 className="text-sm text-slate-400 transition hover:text-white"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
@@ -179,12 +185,12 @@ export default function Portfolio() {
           <div className="border-t border-white/5 bg-[#05070b] px-6 py-5 md:hidden">
             {navItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="block py-3 text-slate-300"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
@@ -469,7 +475,7 @@ export default function Portfolio() {
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
-                href="mailto:hello@prashantlokur.com"
+                href="mailto:prashant.lokur@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-slate-950"
               >
                 <Mail size={17} /> Email me
