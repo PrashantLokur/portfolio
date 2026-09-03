@@ -18,10 +18,22 @@ battery wants a narrow temperature band, the cabin wants comfort immediately,
 and the power electronics want to stay under their limits — and every one of
 those demands draws from the same pack.
 
-Most of my research so far has approached this with model predictive control,
-which handles the coupling well but asks a lot of the hardware. The question
-that keeps coming back is not whether the optimum exists, but how much you give
-up by making it computable on a production ECU.
+Model predictive control handles that coupling well, and most of my research so
+far has gone that way. But it asks a lot of the hardware, and the question that
+keeps coming back is not whether the optimum exists — it's how much you give up
+by making it computable on a production ECU.
+
+## The part I find interesting
+
+This isn't a textbook LQR with weights picked by hand until the response looks
+reasonable. The weights come from the Hessian of the power curve, so the
+quadratic cost is a local second-order approximation of the actual energy
+consumption rather than a tuning proxy for it.
+
+That's the trade I care about: the controller stays cheap enough to evaluate at
+every step on real hardware, but the thing it optimizes is tied to the physics
+of what the system actually costs to run — instead of a set of gains that
+happened to work on the test cases.
 
 ## If you'll be there
 
