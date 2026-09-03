@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { getAllPosts, getPost, formatDate } from "../../../lib/posts";
 
+const siteUrl = "https://www.prashantlokur.com";
+
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
@@ -16,9 +18,25 @@ export async function generateMetadata({
   const post = getPost(slug);
   if (!post) return {};
 
+  const url = `${siteUrl}/writing/${post.slug}`;
+
   return {
     title: `${post.title} — Prashant Lokur`,
     description: post.summary,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description: post.summary,
+      siteName: "Prashant Lokur",
+      publishedTime: post.date || undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.summary,
+    },
   };
 }
 
@@ -71,6 +89,28 @@ export default async function PostPage({
           className={proseStyles}
           dangerouslySetInnerHTML={{ __html: html }}
         />
+
+        <div className="mt-20 flex flex-wrap items-center gap-4 border-t border-white/[0.08] pt-8">
+          <span className="text-sm text-slate-500">Share this</span>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+              `${siteUrl}/writing/${post.slug}`
+            )}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:border-cyan-300/50 hover:text-white"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={`mailto:?subject=${encodeURIComponent(
+              post.title
+            )}&body=${encodeURIComponent(`${siteUrl}/writing/${post.slug}`)}`}
+            className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:border-cyan-300/50 hover:text-white"
+          >
+            Email
+          </a>
+        </div>
       </article>
     </main>
   );

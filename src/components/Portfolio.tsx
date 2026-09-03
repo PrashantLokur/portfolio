@@ -51,6 +51,15 @@ const publications = [
   {
     year: "2026",
     title:
+      "Linear Quadratic Regulator Control for Integrated Thermal Energy Management in Battery Electric Vehicles",
+    authors: "P. Lokur",
+    venue:
+      "17th International Symposium on Advanced Vehicle Control (AVEC '26), Tsukuba",
+    type: "Conference paper",
+  },
+  {
+    year: "2026",
+    title:
       "Energy-Optimal Thermal Management of Heat-Pump Battery Electric Vehicles",
     authors: "P. Lokur, N. Murgovski",
     venue: "IEEE Open Journal of Vehicular Technology (in press)",
