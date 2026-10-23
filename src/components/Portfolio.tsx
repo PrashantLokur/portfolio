@@ -158,6 +158,7 @@ export default function Portfolio() {
     { label: "Experience", href: "/#experience" },
     { label: "Research", href: "/#research" },
     { label: "Writing", href: "/writing" },
+    { label: "Daylight tool", href: "/daylight" },
     { label: "Contact", href: "/#contact" },
   ];
 

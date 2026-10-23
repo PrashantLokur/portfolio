@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "leaflet": "^1.9.4",
     "lucide-react": "^1.29.0",
     "marked": "^18.0.10",
     "motion": "^13.0.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/leaflet": "^1.9.22",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
