@@ -41,9 +41,9 @@ const experience = [
   {
     period: "2012 — 2015",
     title: "Early career",
-    organization: "Volvo Car Group · Tata Consultancy Services",
+    organization: "Tata Consultancy Services · Volvo Car Group",
     description:
-      "Master's thesis on driver modelling for evasive manoeuvre steering assist, using an LQR preview controller and neuromuscular dynamics. Earlier work on battery control module verification and CAD automation.",
+      "Design engineer at Tata Consultancy Services, automating CAD models and drawings. During my MSc at Chalmers: a 2014 summer role at Volvo Car Group on battery control module test cases in HIL, then a 2015 master's thesis on a driver model for evasive manoeuvre steering assist, built from an LQR preview controller and neuromuscular dynamics.",
   },
 ];
 
