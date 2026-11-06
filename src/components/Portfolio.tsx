@@ -428,7 +428,7 @@ export default function Portfolio() {
             </article>
 
             <article className="rounded-[2rem] border border-white/[0.08] bg-white/[0.035] p-8 sm:p-10">
-              <p className="text-sm text-blue-300">Published patent application</p>
+              <p className="text-sm text-blue-300">Granted US patent</p>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight">
                 Method for operating a hybrid electric vehicle and data processing
                 device
@@ -440,7 +440,7 @@ export default function Portfolio() {
                 reference trajectory guides vehicle operation.
               </p>
               <div className="mt-10 text-sm font-semibold text-slate-200">
-                EP 4180292 A1
+                US 12,337,818 B2 · EP 4180292 A1
               </div>
             </article>
           </div>
