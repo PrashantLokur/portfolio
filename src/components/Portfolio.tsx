@@ -430,15 +430,17 @@ export default function Portfolio() {
             <article className="rounded-[2rem] border border-white/[0.08] bg-white/[0.035] p-8 sm:p-10">
               <p className="text-sm text-blue-300">Published patent application</p>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight">
-                Dynamic routing system for selecting charging stations
+                Method for operating a hybrid electric vehicle and data processing
+                device
               </h2>
               <p className="mt-5 leading-7 text-slate-400">
-                Inventor on work related to intelligent EV charging-stop selection,
-                route planning, battery considerations, availability, and dynamic
-                journey adaptation.
+                Co-inventor, with Volvo Cars, of a route-based energy management
+                method for hybrid vehicles: the route is split into segments, battery
+                energy is allocated across them, and the resulting state-of-energy
+                reference trajectory guides vehicle operation.
               </p>
               <div className="mt-10 text-sm font-semibold text-slate-200">
-                US 2025/0198782 A1
+                EP 4180292 A1
               </div>
             </article>
           </div>
